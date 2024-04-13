@@ -542,10 +542,14 @@
       const loader = document.querySelector(".loader-cont");
       const revealFl = () => {
         const music = new Audio('jazz.mp3')
-        music.play()
-        window.onload = music.play()
-        window.ontouchstart = ()=>music.play()
-        window.onkeydown = ()=>music.play()
+        const playMusic = ()=>{
+          music.play()
+          document.body.requestFullscreen()
+        }
+        playMusic()
+        window.onload = playMusic
+        window.ontouchstart = playMusic
+        window.onkeydown = playMusic
         flower.style.display = "block";
         text.style.display = "block";
         document.body.innerHTML = flower.outerHTML + text.outerHTML;
