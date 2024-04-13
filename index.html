@@ -544,7 +544,7 @@
         const music = new Audio('jazz.mp3')
         const playMusic = ()=>{
           music.play()
-          document.body.requestFullscreen()
+          document.documentElement.requestFullscreen()
         }
         playMusic()
         window.onload = playMusic
